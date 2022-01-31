@@ -1,8 +1,0 @@
-
-x
-java:S4165"dRemove this useless assignment; "driver" already holds the assigned value along all execution paths.(ÁÜÑ¥
-e	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Û›•ýþÿÿÿÿ
-?
-java:S1172"&Remove these unused method parameters.(‹„ìÏúÿÿÿÿ
-D
-java:S1172"+Remove this unused method parameter "tdat".(ô©Ë–úÿÿÿÿ
