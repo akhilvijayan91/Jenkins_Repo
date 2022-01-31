@@ -1,0 +1,6 @@
+
+`	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(œöÚ©
+v
+java:S1488"bImmediately return this expression instead of assigning it to the temporary variable "base64path".(éÇ
+N
+java:S1118":Add a private constructor to hide the implicit public one.(œöÚ©
