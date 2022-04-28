@@ -6,9 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
+import org.openqa.selenium.support.events.WebDriverListener;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utilities.eventHandler;
 import utilities.extentReportUtility;
 import utilities.utilityFecthProperty;
 
@@ -39,15 +42,23 @@ public class driverInstance
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
+            case "deco":
+                WebDriverManager.chromedriver().setup();
+                WebDriverListener listener = new eventHandler();
+                WebDriver driverOrginal = new ChromeDriver();
+                driver=new EventFiringDecorator(listener).decorate(driverOrginal);
+                break;
             default:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
         }
-        driver.get(utilityFecthProperty.fetchPropertyValue("url"));
-        driver.manage().window().maximize();
         className = this.getClass().getSimpleName();
         extentReportUtility.createExtentReportInstance(className);
+        driver.get(utilityFecthProperty.fetchPropertyValue("url"));
+        driver.manage().window().maximize();
+
+
     }
     @AfterMethod
     public void closeInstance(ITestResult Result) throws IOException

@@ -13,7 +13,8 @@ import java.util.List;
 public class adminPage {
     WebDriver driver;
 
-    public adminPage(WebDriver driver) {
+    public adminPage(WebDriver driver)
+    {
         this.driver = driver;
     }
 

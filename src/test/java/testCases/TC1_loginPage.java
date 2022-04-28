@@ -6,14 +6,12 @@ import utilities.commonMethods;
 
 import java.io.IOException;
 
-public class TC1_loginPage extends driverInstance
-{
+public class TC1_loginPage extends driverInstance {
     @Test(priority = 1)
-    public void validateLogin() throws IOException
-    {
+    public void validateLogin() throws IOException {
         commonMethods cm = new commonMethods(driver);
         cm.loginactions("Ädmin", "admin123");
-    }
+
    /* @Test(priority = 2)
     public void toadminsection() throws IOException, InterruptedException
     {
@@ -27,4 +25,6 @@ public class TC1_loginPage extends driverInstance
         Thread.sleep(3000);
         ap.searchcreateduser("Mathayi Mapilery");
     }*/
+
+    }
 }

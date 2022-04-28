@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class extentReportUtility
+public class    extentReportUtility
 {
     public static ExtentReports reporter;
     public static ExtentTest loger;

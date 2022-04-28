@@ -1,12 +1,13 @@
-package com.letskodeit.utilities;
+package utilities;
 
 import com.google.common.collect.Ordering;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class Util {
+public class utils {
 
     /***
      * Sleep for specified number of milliseconds
@@ -41,11 +42,11 @@ public class Util {
     public static String getScreenshotName(String methodName, String browserName) {
         String localDateTime = getCurrentDateTime();
         StringBuilder name = new StringBuilder().append(browserName)
-                                                .append("_")
-                                                .append(methodName)
-                                                .append("_")
-                                                .append(localDateTime)
-                                                .append(".png");
+                .append("_")
+                .append(methodName)
+                .append("_")
+                .append(localDateTime)
+                .append(".png");
         return name.toString();
     }
 

@@ -1,6 +1,5 @@
 
-i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(û¯Ñ‡8²é…õé/
-W	java:S125$"<This block of commented-out lines of code should be removed.(­“¬38ÀÄ«õé/
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(úá£‡8²é…õé/
-t
-java:S2737*"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û8€¡¬õé/
+A
+java:S2925"$Remove this use of "Thread.sleep()".(¯ú™ú8®àöëô/
+A
+java:S2925"$Remove this use of "Thread.sleep()".(¯ú™ú8®àöëô/

@@ -67,7 +67,7 @@ public class excelUtility {
                     break;
                 }
             }
-            return (i-1);
+            return (i);
         }
     }
     public static Object[][] getTableData(int testCaseRow) {
