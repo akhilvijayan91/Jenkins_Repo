@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utilities.extentReportUtility;
 import utilities.utilityFecthProperty;
+import utilities.utils;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,9 +19,13 @@ public class adminPage {
         this.driver = driver;
     }
 
-    public void adminpage_usrmgm() throws IOException, InterruptedException {
+    public boolean adminpage_navigation() throws IOException, InterruptedException {
         Thread.sleep(3000);
         driver.findElement(By.xpath(utilityFecthProperty.fetchLocaterValue("goto_adminpage_section_ursmgm"))).click();
+        return utils.verifyTextMatch(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/index.php/admin/viewSystemUsers");
+
+    }
+    public void clickAddInAdmin() throws IOException {
         driver.findElement(By.xpath(utilityFecthProperty.fetchLocaterValue("adminpage_addusr_btn"))).click();
     }
 

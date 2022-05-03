@@ -58,46 +58,48 @@ public class excelUtility {
     }
     public static int nextTestcaseRowCount(int testCaseRow, int totalRowCount){
         int i=0;
-        if (testCaseRow==totalRowCount){
+       /* if (testCaseRow==totalRowCount){
             return testCaseRow;
-        }
-        else {
-            for (i=testCaseRow+1; i<totalRowCount;i++){
+        }*/
+
+            for (i=testCaseRow+1; i<=totalRowCount;i++){
                 if(getCellData(i,0)!=""){
                     break;
                 }
             }
             return (i);
-        }
+
     }
     public static Object[][] getTableData(int testCaseRow) {
         int numberOfRows=0;
         int rowcount = excelsheet.getLastRowNum();
         int k = nextTestcaseRowCount(testCaseRow, rowcount);
-        if(k==rowcount)
+        if(testCaseRow==rowcount)
         {
             numberOfRows = 1;
         }
-        else if(k<rowcount)
+        else if(testCaseRow<rowcount)
         {
-            numberOfRows=(rowcount-testCaseRow)+1;
-            k=k+1;
+            numberOfRows=(k-testCaseRow);
+           // k=k+1;
         }
-        else {
+       /* else {
              numberOfRows = (k - testCaseRow);
-        }
+        }*/
         int numberOfColumns = (excelsheet.getRow(testCaseRow).getLastCellNum() )- 1;
         String[][] tabArray = new String[numberOfRows][numberOfColumns];
 
         try {
             int ci = 0;
-            while (testCaseRow <= k) {
-                int cj = 0;
-                for (int j = 1; j <= numberOfColumns; j++, cj++) {
-                    tabArray[ci][cj] = getCellData(testCaseRow, j);
-                }
-                ci++;
-                testCaseRow++;
+            while (testCaseRow < k) {
+
+                    int cj = 0;
+                    for (int j = 1; j <= numberOfColumns; j++, cj++) {
+                        tabArray[ci][cj] = getCellData(testCaseRow, j);
+                    }
+                    ci++;
+                    testCaseRow++;
+
             }
         } catch (Exception e) {
             throw e;

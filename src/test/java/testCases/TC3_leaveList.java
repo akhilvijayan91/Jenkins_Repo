@@ -29,7 +29,6 @@ public class TC3_leaveList extends driverInstance
     @DataProvider(name="LeaveList")
     public  Object[][] adduser() throws IOException {
         excelUtility.setExcelfile("./src/test/resources/testData/Testdata.xlsx", "dataSheet");
-        System.out.println("ed");
         String testcaseName=this.getClass().getSimpleName();
         int startingTestcaseRow = excelUtility.getrowcontains(testcaseName,0);
         Object[][] tablearray = excelUtility.getTableData(startingTestcaseRow);

@@ -12,10 +12,11 @@ public class commonMethods
     {
         this.driver = driver;
     }
-    public void loginactions(String username, String password) throws IOException {
+    public boolean loginactions(String username, String password) throws IOException {
         loginPage lp = new loginPage(driver);
         lp.enterUserName(username);
         lp.enterpassword(password);
         lp.tosignin();
+        return utils.verifyTextMatch(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/index.php/dashboard");
     }
 }
