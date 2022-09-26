@@ -1,0 +1,26 @@
+name: Sanity_WorkFlow
+
+on:
+  push:
+    branches:
+      - main
+      - 'releases/**'
+
+  pull_request:
+    types: [opened, synchronize]
+
+  workflow_dispatch:
+
+jobs:
+    build:
+      name: SanityCheck
+      runs-on: windows-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: Set up JDK 11
+          uses: actions/setup-java@v1
+          with:
+              java-version: 11
+
+        - name: Run unit test
+          run: mvn clean test
